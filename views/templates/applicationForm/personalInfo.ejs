@@ -1,0 +1,118 @@
+<% layout('/layout/boilerplate') %>
+    <div class="mb-5 mx-5 mt-3">
+        <h2 class="mb-3">Personal Information</h2>
+        <hr>
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="name" class="form-label">Full Name <span class="required-field">*</span></label>
+                <input type="text" class="form-control" name="scholar[name]" id="name" required>
+                <div class="invalid-feedback">Please specify a name</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="gender" class="form-label">Gender <span class="required-field">*</span></label>
+                <select name="scholar[gender]" id="gender" class="form-select">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="dob" class="form-label">Date of Birth <span class="required-field">*</span></label>
+                <input type="date" class="form-control" id="dob" name="scholar[dob]" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="fatherName" class="form-label">Father's Name</label>
+                <input type="text" id="fatherName" name="scholar[fatherName]" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="motherName" class="form-label">Mother's Name</label>
+                <input type="text" id="motherName" name="scholar[motherName]" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="husbandName" class="form-label">If married then name of husband</label>
+                <input type="text" class="form-control" id="husbandName" name="scholar[husbandName]"">
+            </div>
+        </div>
+        <div class=" row">
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email ID <span class="required-field">*</span></label>
+                    <input type="email" class="form-control" id="email" name="scholar[email]" required>
+                    <div class="invalid-feedback">Please specify a valid email address</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="contactNo" class="form-label">Mobile No <span class="required-field">*</span></label>
+                    <input type="number" class="form-control" id="contactNo" name="scholar[contactNo]" required>
+                    <div class="invalid-feedback">Please specify a valid number.Do not write the country code.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="religion" class="form-label">
+                        Religion<span class="required-field">*</span>
+                    </label>
+                    <input type="text" class="form-control" id="religion" name="scholar[religion]" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="category" class="form-label">Category <span class="required-field">*</span></label>
+                    <select name="scholar[category]" id="category" class="form-select">
+                        <option value="GEN">GEN</option>
+                        <option value="OBC">OBC</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                        <option value="EWC">EWC</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="permanentAddress" class="form-label">Permanent Address <span
+                            class="required-field">*</span></label>
+                    <textarea name="scholar[permanentAddress]" id="permanentAddress" cols="30" rows="3"
+                        class="form-control" required></textarea>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="correspondanceAddress" class="form-label">Correspondance Address <span
+                            class="required-field">*</span></label>
+                    <textarea name="scholar[correspondanceAddress]" id="correspondanceAddress" cols="30" rows="3"
+                        class="form-control" required></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label class="form-label" for="guardianName">Guardian Name <span
+                            class="required-field">*</span></label>
+                    <input type="text" class="form-control" id="guardianName" name="guardian[name]" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label" for="guardianNo">Guardian Mobile Number <span
+                            class="required-field">*</span></label>
+                    <input type="number" class="form-control" id="guardianNo" name="guardian[contactNo]" required>
+                    <div class="invalid-feedback">Please specify a valid number.Do not write the country code.</div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label" for="guardianEmail">Guardian Email <span
+                            class="required-field">*</span></label>
+                    <input type="email" class="form-control" id="guardianEmail" name="guardian[email]" required>
+                    <div class="invalid-feedback">Please specify a valid email address</div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="dayScholar" class="form-label">Are you a day scholar?</label>
+                <select name="scholar[dayScholar]" id="dayScholar" class="form-select">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="mb-3 d-flex justify-content-center">
+                <!-- <button class="btn btn-success save-button mx-1">Save</button> -->
+                <a class="btn btn-primary mx-1" onclick="showBlock('tab2Block')">Next</a>
+            </div>
+        </div>

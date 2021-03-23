@@ -1,0 +1,176 @@
+<% layout('/layout/boilerplate') %>
+    <div class="mb-5 mx-5 mt-3">
+        <h2 class="mb-3">Educational Qualification</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label" for="studiedAtBanasthali">Have you studied at Banasthali before?</label>
+                <select id="studiedAtBanasthali" class="form-select">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-3 d-none" id="enrollmentNoBlock">
+                <label for="enrollmentNo" class="form-label">Enrollment No</label>
+                <input type="text" class="form-control" id="enrollmentNo" name="scholar[enrollmentNo]">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="additionalExams">Have you cleared any of the following examinations</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="NET" id="NET"
+                        name="scholar[additionalExams]">
+                    <label class="form-check-label" for="NET">
+                        NET
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="JRF" id="JRF"
+                        name="scholar[additionalExams]">
+                    <label class="form-check-label" for="JRF">
+                        JRF
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="SRF" id="SRF"
+                        name="scholar[additionalExams]">
+                    <label class="form-check-label" for="SRF">
+                        SRF
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="TRF" id="TRF"
+                        name="scholar[additionalExams]">
+                    <label class="form-check-label" for="TRF">
+                        TRF
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="RGF" id="RGF"
+                        name="scholar[additionalExams]">
+                    <label class="form-check-label" for="RGF">
+                        RGF
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="M.Phil" id="M.Phil"
+                        name="scholar[additionalExams]">
+                    <label class="form-check-label" for="M.Phil">
+                        M.Phil
+                    </label>
+                </div>
+            </div>
+        </div>
+        <h4>Graduation</h4>
+        <hr class="style2">
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="graduationDegree" class="form-label">Degree <span
+                            class="required-field">*</span></label>
+                    <input type="text" class="form-control" name="graduation[degreeType]" id="graduationDegree"
+                        placeholder="B.Tech/B.A/B.Sc/etc" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="graduationUniversity" class="form-label">Name of university/board <span
+                            class="required-field">*</span></label>
+                    <input type="text" class="form-control" id="graduationUniversity" name="graduation[universityName]"
+                        required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="gradPassingYear" class="form-label">Year of Passing <span
+                            class="required-field">*</span></label>
+                    <input type="text" class="form-control" name="graduation[passingYear]" id="gradPassingYear"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="gradPercentage" class="form-label">Percentage/CGPA <span
+                            class="required-field">*</span></label>
+                    <input type="text" class="form-control" name="graduation[percentage]" id="gradPercentage" required>
+                </div>
+            </div>
+        </div>
+        <h4>Post Graduation</h4>
+        <hr class="style2">
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="postGradDegree" class="form-label">Degree <span class="required-field">*</span></label>
+                    <input type="text" class="form-control" name="postGraduation[degreeType]" id="postGradDegree"
+                        placeholder="M.Tech/M.A/M.Sc/etc" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="postGradUniversity" class="form-label">Name of university/board <span
+                            class="required-field">*</span></label>
+                    <input type="text" class="form-control" id="postGradUniversity"
+                        name="postGraduation[universityName]" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="postGradPassingYear" class="form-label">Year of Passing <span
+                            class="required-field">*</span></label>
+                    <input type="text" class="form-control" name="postGraduation[passingYear]" id="postGradPassingYear"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="postGradPercentage" class="form-label">Percentage/CGPA <span
+                            class="required-field">*</span></label>
+                    <input type="text" class="form-control" name="postGraduation[percentage]" id="postGradPercentage"
+                        required>
+                </div>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Examination<span class="required-field">*</span></th>
+                    <th>Name of Board<span class="required-field">*</span></th>
+                    <th>Year Of Passing<span class="required-field">*</span></th>
+                    <th>Marks Obtained<span class="required-field">*</span></th>
+                    <th>Max Marks<span class="required-field">*</span></th>
+                    <th>Division<span class="required-field">*</span></th>
+                    <th>Percentage<span class="required-field">*</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Senior Secondary</th>
+                    <td><input type="text" class="form-control" name="seniorSecondary[boardName]" required></td>
+                    <td><input type="number" class="form-control" name="seniorSecondary[yearOfPassing]" required></td>
+                    <td><input type="text" class="form-control" name="seniorSecondary[marksObtained]" required></td>
+                    <td><input type="text" class="form-control" name="seniorSecondary[maxMarks]" required></td>
+                    <td><input type="text" class="form-control" name="seniorSecondary[division]" required></td>
+                    <td><input type="text" class="form-control" name="seniorSecondary[percentage]" required></td>
+                </tr>
+                <tr>
+                    <th>High School</th>
+                    <td><input type="text" class="form-control" name="highSchool[boardName]" required></td>
+                    <td><input type="number" class="form-control" name="highSchool[yearOfPassing]" required></td>
+                    <td><input type="text" class="form-control" name="highSchool[marksObtained]" required></td>
+                    <td><input type="text" class="form-control" name="highSchool[maxMarks]" required></td>
+                    <td><input type="text" class="form-control" name="highSchool[division]" required></td>
+                    <td><input type="text" class="form-control" name="highSchool[percentage]" required></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="mb-3 d-flex justify-content-center">
+            <a class="btn btn-primary mx-1" onclick="showBlock('tab1Block')">Previous</a>
+            <!-- <button class="btn btn-success save-button mx-1">Save</button> -->
+            <a class="btn btn-primary mx-1" onclick="showBlock('tab3Block')">Next</a>
+        </div>
+    </div>
+    <script>
+        const studiedAtBanasthali = document.getElementById('studiedAtBanasthali');
+        const enrollmentNoBlock = document.querySelector('#enrollmentNoBlock');
+        studiedAtBanasthali.addEventListener('change', () => {
+            if (studiedAtBanasthali.value === "Yes") {
+                enrollmentNoBlock.classList.remove("d-none");
+            } else {
+                enrollmentNoBlock.classList.add("d-none");
+            }
+        })
+    </script>

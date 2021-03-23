@@ -1,0 +1,45 @@
+.bg-blue{
+    background-color : #3f73a1;
+}
+.bg-blue-trans{
+    background-color : #3f73a170;
+}
+.listOption{
+    display : block;
+    color : white;
+    text-decoration: none;
+    padding : 1rem;
+}
+.hide {
+    display: none;
+}
+.show{
+    display:block;
+}
+.required-field{
+    color : red;
+}
+
+.listOption:hover {
+    color : white;
+    box-shadow : 0 3px 3px rgba(0,0,0,0.2);
+    transform: translate3d(-7%,-5%,0);
+}
+hr.style1{
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+hr.style2 {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+hr.style3 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+

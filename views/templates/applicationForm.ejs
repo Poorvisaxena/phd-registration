@@ -1,0 +1,53 @@
+<% layout('/layout/boilerplate') %>
+    <h1 class="text-center mb-3">Application Form</h1>
+    <form action="/phd/apply" method="POST" class="validated-form" novalidate id="application-form">
+        <div>
+            <div class="row mb-5">
+                <div class="col bg-dark"><a href="#personalInfo" id="tab1" class="listOption"
+                        onclick="showBlock('tab1Block')">Personal
+                        Information</a>
+                </div>
+                <div class="col bg-dark"><a href="#educationalInfo" id="tab2" class="listOption"
+                        onclick="showBlock('tab2Block')">Educational
+                        Information</a></div>
+                <div class="col bg-dark"><a href="#workExperience" id="tab3" class="listOption"
+                        onclick="showBlock('tab3Block')">Prior Work Experience</a>
+                </div>
+                <div class="col bg-dark"><a href="#courseDetails" id="tab4" class="listOption"
+                        onclick="showBlock('tab4Block')">Course Details</a>
+                </div>
+                <!-- <div class="col bg-dark"><a href="#attachments" id="tab5" class="listOption"
+                    onclick="showBlock('tab5Block')">Attachments</a>
+            </div> -->
+            </div>
+        </div>
+        <div class="mb-5" id="displayFormBlocks">
+            <div class="bg-light mb-5 border rounded" id="tab1Block">
+                <%- include('applicationForm/personalInfo') %>
+            </div>
+            <div class="bg-light mb-5 border rounded" id="tab2Block" style="display:none">
+                <%- include('applicationForm/EducationalInfo') %>
+            </div>
+            <div class="bg-light mb-5 border rounded" id="tab3Block" style="display:none">
+                <%- include('applicationForm/workExperience') %>
+            </div>
+            <div class="bg-light mb-5 border rounded" id="tab4Block" style="display:none">
+                <%- include('applicationForm/courseDetails') %>
+            </div>
+            <!-- <div class="bg-light mb-5 border rounded" id="tab5Block" style="display:none">
+            <%- include('applicationForm/attachments') %>
+        </div> -->
+        </div>
+
+    </form>
+    <script>
+        const showBlock = (id) => {
+            const displayFormBlocks = document.querySelector('#displayFormBlocks');
+            for (let children of displayFormBlocks.children) {
+                children.style.display = "none";
+            }
+            const block = document.getElementById(id);
+            block.style.display = '';
+        }
+    </script>
+    <script src="/javascripts/validatedForm.js"></script>

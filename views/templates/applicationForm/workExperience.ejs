@@ -1,0 +1,72 @@
+<% layout('/layout/boilerplate') %>
+    <div class="mb-5 mx-5 mt-3">
+        <h2 class="mb-3">Work Experience</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label" for="staffAtBanasthali">Do you work at Banasthali Vidyapith <span
+                        class="required-field">*</span></label>
+                <select name="scholar[staffAtBanasthali]" id="staffAtBanasthali" class="form-select">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="workAsTeacher" class="form-label">Do you work as a teacher at Vidyapith or somewhere
+                    else <span class="required-field">*</span></label>
+                <select name="scholar[workAsTeacher]" id="workAsTeacher" class="form-select">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <label for="priorExperience" class="form-label"></label>
+            <table class="table" id="workExperienceTable">
+                <thead>
+                    <tr>
+                        <th>Company Name </th>
+                        <th>Designation</th>
+                        <th>Duration</th>
+                        <th>Domain/Field</th>
+                        <th><a class="btn btn-dark" onclick="addRow('workExperienceTable')">+</a></th>
+                        <th><a class="btn btn-dark" onclick="deleteRow('workExperienceTable')">-</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="workExperienceTableRow">
+                        <td><input type="text" class="form-control" name=workExperience[companyName]></td>
+                        <td><input type="text" class="form-control" name=workExperience[designation]></td>
+                        <td><input type="text" class="form-control" name=workExperience[duration]></td>
+                        <td><input type="text" class="form-control" name=workExperience[domain]></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mb-3 d-flex justify-content-center">
+            <a class="btn btn-primary mx-1" onclick="showBlock('tab2Block')">Previous</a>
+            <!-- <button class="btn btn-success save-button mx-1">Save</button> -->
+            <a class="btn btn-primary mx-1" onclick="showBlock('tab4Block')">Next</a>
+        </div>
+    </div>
+    <script>
+        const workExperienceID = ['companyName', 'designation', 'duration', 'domain'];
+        const addRow = (id) => {
+            const table = document.getElementById(id).getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow(-1);
+            for (let i = 0; i < 4; i++) {
+                const newCol = newRow.insertCell(-1);
+                const input = document.createElement('input');
+                input.classList.add('form-control');
+                input.name = `workExperience[${workExperienceID[i]}]`;
+                newCol.append(input);
+            }
+        }
+        const deleteRow = (id) => {
+            const table = document.getElementById(id);
+            let noOfRows = table.rows.length;
+            if (noOfRows > 1) {
+                table.deleteRow(-1);
+            }
+        }
+    </script>

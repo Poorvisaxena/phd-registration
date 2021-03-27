@@ -23,6 +23,7 @@
 .listOption:hover {
     color : white;
     box-shadow : 0 3px 3px rgba(0,0,0,0.2);
+    text-shadow: pink 1px 0 5px;
     transform: translate3d(-7%,-5%,0);
 }
 hr.style1{

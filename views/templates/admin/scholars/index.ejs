@@ -1,0 +1,19 @@
+<% layout('/layout/boilerplate') %>
+    <div class="mb-3">Total Scholars : <%=scholars.length %>
+    </div>
+    <%for(let scholar of scholars){%>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= scholar.name %>
+                </h5>
+                <p class="card-text">Department : <%= scholar.department %>
+                </p>
+                <p class="card-text">Email : <%= scholar.email %>
+                </p>
+                <p class="card-text">Has Qualified : <%=scholar.additionalExams%>
+                </p>
+                <a href="/admin/scholars/<%=scholar._id%>" class="card-link btn btn-primary">View</a>
+            </div>
+        </div>
+        <%}%>

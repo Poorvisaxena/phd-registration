@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const applicantSchema = Schema({
-    applicationStatus: {
-        type: String,
-        enum: ['On Hold', 'Accepted', 'Rejected']
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     },
     enrollmentNo: {
         type: String

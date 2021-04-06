@@ -10,7 +10,7 @@ const localStrategy = require('passport-local');
 const User = require('./models/user');
 
 const homeRoutes = require('./routes/home');
-const adminRoutes = require('./routes/admin');
+const adminRoutes = require('./routes/admin/admin');
 
 const ExpressError = require('./utils/ExpressError');
 

@@ -5,6 +5,10 @@ const userSchema = new Schema({
     userType: {
         type: Number,
         required: true
+    },
+    applicationStatus: {
+        type: String,
+        enum: ['rejected', 'accepted', 'notSubmitted', 'onHold']
     }
 });
 userSchema.plugin(passportLocalMongoose);

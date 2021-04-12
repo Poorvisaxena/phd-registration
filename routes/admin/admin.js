@@ -10,6 +10,7 @@ const Applicant = require('../../models/applicant');
 
 const applicantRoutes = require('./applicants');
 const scholarRoutes = require('./scholar');
+const departmentRoutes = require('./department');
 
 // router.use((req, res, next) => {
 //     const { currentUser, role } = res.locals;
@@ -46,5 +47,5 @@ router.post('/register', catchAsync(async (req, res) => {
 }));
 router.use('/applicants', applicantRoutes);
 router.use('/scholars', scholarRoutes);
-
+router.use('/departments', departmentRoutes);
 module.exports = router;

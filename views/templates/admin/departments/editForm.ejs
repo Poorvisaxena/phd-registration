@@ -1,0 +1,16 @@
+<% layout('/layout/boilerplate') %>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="my-5">Edit Department Details</h3>
+            <form action="/admin/departments/<%= department._id %>?_method=PATCH" method="POST" class="validated-form"
+                novalidate>
+                <label for="deptID" class="form-label">ID of Department</label>
+                <input type="text" class="form-control" name="dept_id" id="deptID" required value=<%=department.dept_id
+                    %> >
+                <label for="name" class="form-label">Name of Department</label>
+                <input type="text" class="form-control" name="name" id="name" required value=<%=department.name %> >
+                <button class="btn btn-primary mt-4">Make Changes</button>
+            </form>
+        </div>
+    </div>
+    <script src="/javascripts/bootstrapFormValidation.js"></script>

@@ -4,6 +4,7 @@ const catchAsync = require('../utils/catchAsync');
 const passport = require('passport');
 const User = require('../models/user');
 const Applicant = require('../models/applicant');
+const Department = require('../models/department');
 const { isLoggedIn, hasPermission } = require('../middleware');
 router.get('/', (req, res) => {
     res.render('templates/home');
@@ -59,14 +60,15 @@ router.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
 })
-router.get('/phd/apply', isLoggedIn, (req, res) => {
+router.get('/phd/apply', isLoggedIn, catchAsync(async (req, res) => {
     const currentUser = req.user;
     if (currentUser.applicationStatus === "notSubmitted") {
-        res.render('templates/applicationForm');
+        const departments = await Department.find({});
+        res.render('templates/applicationForm', { departments });
     } else {
         res.render('templates/applicationForm/submitted');
     }
-})
+}));
 const populateWorkExperience = (workExperience) => {
     if (workExperience === undefined || workExperience.companyName === "") return [];
     const { companyName, designation, duration, domain } = workExperience;

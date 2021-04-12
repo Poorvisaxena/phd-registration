@@ -1,3 +1,4 @@
+//this is only for the application form.For normal form validation used bootstrapFormValidation.js
 (function () {
     'use strict'
 

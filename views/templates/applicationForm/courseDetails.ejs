@@ -7,38 +7,11 @@
                 <label for="department" class="form-label">Department under which intends Ph.d Registration <span
                         class="required-field">*</span></label>
                 <select name="scholar[department]" id="department" class="form-select">
-                    <option value="Computer Science">Computer Science</option>
-                    <option value="Pharmacy">Pharmacy</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Chemical Engineering">Computer Science</option>
-                    <option value="Bio-science and  Biotechnology">Bio-science and Biotechnology</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Mathematical Science">Mathematical Science</option>
-                    <option value="Physics">Physics</option>
-                    <option value="Sanskrit, Philosophy and Vedic Studies">Sanskrit, Philosophy and Vedic Studies
-                    </option>
-                    <option value="Hindi and Modern Indian Languages">Hindi and Modern Indian Languages</option>
-                    <option value="English and Modern European Languages">English and Modern European Languages
-                    </option>
-                    <option value="Economics">Economics</option>
-                    <option value="History and Indian Culture">History and Indian Culture</option>
-                    <option value="Political Science and Public Administration">Political Science and Public
-                        Administration</option>
-                    <option value="Sociology">Sociology</option>
-                    <option value="Physical Education">Physical Education</option>
-                    <option value="Performing Arts">Performing Arts</option>
-                    <option value="Visual Art">Visual Art</option>
-                    <option value="Home-science">Home-science</option>
-                    <option value="Education">Education</option>
-                    <option value="Commerce and Banking">Commerce and Banking</option>
-                    <option value="Management">Management</option>
-                    <option value="Design">Design</option>
-                    <option value="Legal Studies">Legal Studies</option>
-                    <option value="Psychology">Psychology</option>
-                    <option value="Journalism and Mass Communication">Journalism and Mass Communication</option>
-                    <option value="Earth Sciences">Earth Sciences</option>
-                    <option value="Aviation">Aviation</option>
-                    <option value="Automation">Automation</option>
+                    <% for (let dept of departments) { %>
+                        <option value="<%= dept.name%>">
+                            <%= dept.name %>
+                        </option>
+                        <% } %>
                 </select>
             </div>
         </div>

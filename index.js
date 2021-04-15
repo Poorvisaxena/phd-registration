@@ -10,7 +10,9 @@ const localStrategy = require('passport-local');
 const User = require('./models/user');
 
 const homeRoutes = require('./routes/home');
-const adminRoutes = require('./routes/admin');
+const adminRoutes = require('./routes/admin/admin');
+
+const ExpressError = require('./utils/ExpressError');
 
 mongoose.connect('mongodb://localhost:27017/phd-registration', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
     .then(() => {

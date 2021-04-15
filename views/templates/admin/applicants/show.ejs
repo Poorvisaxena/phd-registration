@@ -1,0 +1,277 @@
+<% layout('/layout/boilerplate') %>
+
+    <div class="accordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#personalInfo">
+                    Personal Information
+                </button>
+            </h2>
+            <div id="personalInfo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <p>Name : <%= applicant.name %>
+                    </p>
+                    <p>Enrollment No : <%=(applicant.enrollmentNo)?applicant.enrollmentNo:"Not Specified" %>
+                    </p>
+                    <p>Email : <%=applicant.email%>
+                    </p>
+                    <p>Contact No : <%= applicant.contactNo%>
+                    </p>
+                    <p>Gender : <%=applicant.gender %>
+                    </p>
+                    <p>Date of Birth : <%= applicant.dob%>
+                    </p>
+                    <p>Father Name : <%= applicant.fatherName %>
+                    </p>
+                    <p>Mother Name : <%= applicant.motherName %>
+                    </p>
+                    <div>
+                        <%if(applicant.gender==="Female" && applicant.husbandName) {%>
+                            <p>Husband Name : <%= applicant.husbandName %>
+                            </p>
+                            <%}%>
+                    </div>
+                    <p>Religion : <%= applicant.religion %>
+                    </p>
+                    <p>Category : <%= applicant.category%>
+                    </p>
+                    <p>Permanent Address : <%= applicant.permanentAddress%>
+                    </p>
+                    <p>Correspondance Address : <%= applicant.correspondanceAddress %>
+                    </p>
+                    <p>Guardian's Name : <%=applicant.guardian.name %>
+                    </p>
+                    <p>Guardian's Email : <%=applicant.guardian.email %>
+                    </p>
+                    <p>Guardian's Contact No : <%= applicant.guardian.contactNo%>
+                    </p>
+                    <p>Day Scholar : <%= (applicant.dayScholar)?"Yes":"No" %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#educationalInfo">
+                    Educational Information
+                </button>
+            </h2>
+            <div id="educationalInfo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <p>Exams Qualified : <%= applicant.additionalExams%>
+                    </p>
+                    <div>
+                        <strong>Post Graduation</strong>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Degree</th>
+                                    <th>University/Board</th>
+                                    <th>Year of passing</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%= applicant.education.postGraduation.degreeType%>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.postGraduation.universityName%>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.postGraduation.passingYear%>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.postGraduation.percentage%>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <strong>Graduation</strong>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Degree</th>
+                                    <th>University/Board</th>
+                                    <th>Year of passing</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%= applicant.education.graduation.degreeType%>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.graduation.universityName%>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.graduation.passingYear%>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.graduation.percentage%>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <strong>Senior Secondary</strong>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Board Name</th>
+                                    <th>Passing Year</th>
+                                    <th>Marks Obtained</th>
+                                    <th>Max Marks</th>
+                                    <th>Division</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%= applicant.education.seniorSecondary.boardName %>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.seniorSecondary.yearOfPassing %>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.seniorSecondary.marksObtained %>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.seniorSecondary.maxMarks%>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.seniorSecondary.division%>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.seniorSecondary.percentage%>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <strong>Secondary</strong>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Board Name</th>
+                                    <th>Passing Year</th>
+                                    <th>Marks Obtained</th>
+                                    <th>Max Marks</th>
+                                    <th>Division</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%= applicant.education.highSchool.boardName %>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.highSchool.yearOfPassing %>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.highSchool.marksObtained %>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.highSchool.maxMarks%>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.highSchool.division%>
+                                    </td>
+                                    <td>
+                                        <%= applicant.education.highSchool.percentage%>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#workExperience">
+                    Work Experience
+                </button>
+            </h2>
+            <div id="workExperience" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <p>Staff At Banasthali : <%=(applicant.staffAtBanasthali)?"Yes":"No"%>
+                    </p>
+                    <p>Worked as teacher at Banasthali or elsewhere : <%= (applicant.workAsTeacher)?"Yes":"No" %>
+                    </p>
+                    <div>
+                        <%if(applicant.workExperience.length===0){%>
+                            <p>Work Experience : <%=applicant.workExperience %>
+                            </p>
+                            <%}else{%>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Company Name </th>
+                                            <th>Designation</th>
+                                            <th>Duration</th>
+                                            <th>Domain/Field</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%for(let job of applicant.workExperience){%>
+                                            <tr>
+                                                <td>
+                                                    <%=job.companyName%>
+                                                </td>
+                                                <td>
+                                                    <%=job.designation%>
+                                                </td>
+                                                <td>
+                                                    <%=job.duration%>
+                                                </td>
+                                                <td>
+                                                    <%=job.domain%>
+                                                </td>
+                                            </tr>
+                                            <%}%>
+                                    </tbody>
+                                </table>
+                                <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#courseDetails">
+                    Course Details
+                </button>
+            </h2>
+            <div id="courseDetails" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <p>Department : <%= applicant.department%>
+                    </p>
+                    <p>Research Supervisor : <%= applicant.researchSupervisor%>
+                    </p>
+                    <p>Topic : <%= applicant.topic%>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-3">
+        <form action="/admin/applicants/<%=applicant._id%>/accept" class="d-inline">
+            <button class="btn btn-success">Accept</button>
+        </form>
+        <form action="/admin/applicants/<%=applicant._id%>?_method=DELETE" method="POST" class="d-inline">
+            <button class="btn btn-danger">Reject</button>
+        </form>
+    </div>

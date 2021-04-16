@@ -11,7 +11,7 @@ const User = require('./models/user');
 
 const homeRoutes = require('./routes/home');
 const adminRoutes = require('./routes/admin/admin');
-
+// add routes here
 const ExpressError = require('./utils/ExpressError');
 
 mongoose.connect('mongodb://localhost:27017/phd-registration', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
@@ -67,10 +67,12 @@ app.use((req, res, next) => {
     next();
 })
 app.use('/admin', adminRoutes);
+//supervisor,evaluator
 app.use('/', homeRoutes);
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404));
 })
+
 app.use((err, req, res, next) => {
     const { statusCode = 500 } = err;
     if (!err.message) err.message = 'Something went wrong';

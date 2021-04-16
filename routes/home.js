@@ -89,20 +89,20 @@ const populateWorkExperience = (workExperience) => {
     return jobs;
 }
 router.post('/phd/apply', isLoggedIn, catchAsync(async (req, res) => {
-
-    const { scholar, guardian, graduation, postGraduation, seniorSecondary, highSchool, workExperience } = req.body;
-    scholar.guardian = guardian;
-    scholar.education = { highSchool, seniorSecondary, graduation, postGraduation };
-    scholar.submissionOfApplication = new Date().toJSON().slice(0, 10);
-    scholar.workExperience = populateWorkExperience(workExperience);
-    const applicant = new Applicant(scholar);
-    applicant.userId = req.user._id;
-    await applicant.save();
-    const currentUser = await User.findById(req.user._id);
-    currentUser.applicationStatus = "onHold";
-    await currentUser.save();
-    req.flash('success', 'Application Submitted Successfully')
-    res.redirect('/home');
+    res.send(req.body);
+    // const { scholar, guardian, graduation, postGraduation, seniorSecondary, highSchool, workExperience } = req.body;
+    // scholar.guardian = guardian;
+    // scholar.education = { highSchool, seniorSecondary, graduation, postGraduation };
+    // scholar.submissionOfApplication = new Date().toJSON().slice(0, 10);
+    // scholar.workExperience = populateWorkExperience(workExperience);
+    // const applicant = new Applicant(scholar);
+    // applicant.userId = req.user._id;
+    // await applicant.save();
+    // const currentUser = await User.findById(req.user._id);
+    // currentUser.applicationStatus = "onHold";
+    // await currentUser.save();
+    // req.flash('success', 'Application Submitted Successfully')
+    // res.redirect('/home');
 }));
 
 

@@ -1,6 +1,7 @@
 <% layout('/layout/boilerplate') %>
     <h1 class="text-center mb-3">Application Form</h1>
     <form action="/phd/apply" method="POST" class="validated-form" novalidate id="application-form">
+        <!-- enctype="multipart/form-data"  -->
         <div>
             <div class="row mb-5">
                 <div class="col bg-dark"><a href="#personalInfo" id="tab1" class="listOption"
@@ -17,8 +18,8 @@
                         onclick="showBlock('tab4Block')">Course Details</a>
                 </div>
                 <!-- <div class="col bg-dark"><a href="#attachments" id="tab5" class="listOption"
-                    onclick="showBlock('tab5Block')">Attachments</a>
-            </div> -->
+                        onclick="showBlock('tab5Block')">Attachments</a>
+                </div> -->
             </div>
         </div>
         <div class="mb-5" id="displayFormBlocks">
@@ -35,8 +36,8 @@
                 <%- include('applicationForm/courseDetails') %>
             </div>
             <!-- <div class="bg-light mb-5 border rounded" id="tab5Block" style="display:none">
-            <%- include('applicationForm/attachments') %>
-        </div> -->
+                <%- include('applicationForm/attachments') %>
+            </div> -->
         </div>
     </form>
     <script>
@@ -47,6 +48,7 @@
             }
             const block = document.getElementById(id);
             block.style.display = '';
+            window.scrollTo(0, 0);
         }
     </script>
     <script src="/javascripts/validatedForm.js"></script>

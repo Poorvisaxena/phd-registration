@@ -9,9 +9,10 @@ const passport = require('passport');
 const localStrategy = require('passport-local');
 const User = require('./models/user');
 
+//add routes here.make sure to foloow the same pattern
 const homeRoutes = require('./routes/home');
 const adminRoutes = require('./routes/admin/admin');
-// add routes here
+const scholarRoutes = require('./routes/scholar');
 const ExpressError = require('./utils/ExpressError');
 
 mongoose.connect('mongodb://localhost:27017/phd-registration', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
@@ -66,12 +67,20 @@ app.use((req, res, next) => {
     }
     next();
 })
+
+// routes are added Headers.while writing please keep in mind the order
 app.use('/admin', adminRoutes);
-//supervisor,evaluator
 app.use('/', homeRoutes);
+app.use('/', scholarRoutes);
+
+//Page Not found error
+//If the request matched with none of the routes then this will be displayed
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404));
 })
+//this is a custom error hadler.
+//whenever you call next with an argument.it ends up here.
+//Basically it prints the error out on the screen
 
 app.use((err, req, res, next) => {
     const { statusCode = 500 } = err;

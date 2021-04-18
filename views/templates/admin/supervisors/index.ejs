@@ -1,0 +1,10 @@
+<% layout('/layout/boilerplate') %>
+    <div>Total supervisor : <%= supervisors.length %>
+    </div>
+    <div>
+        <a href="/admin/supervisors/new">Add new supervisor</a>
+    </div>
+    <% for (let supervisor of supervisors) { %>
+        <p>supervisor.name</p>
+        <p>supervisor.supervisorType</p>
+        <% } %>

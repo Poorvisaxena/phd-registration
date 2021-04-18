@@ -7,6 +7,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const localStrategy = require('passport-local');
+
 const User = require('./models/user');
 
 //add routes here.make sure to foloow the same pattern

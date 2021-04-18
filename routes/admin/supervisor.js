@@ -6,8 +6,17 @@ const Supervisor = require('../../models/supervisor')
 const supervisors = require('../../controllers/admin/supervisor');
 
 router.get('/', catchAsync(supervisors.indexPage));
-router.get('/new', supervisors.renderNewForm);
-//     /admin/supervisors/:id
+
+router.route('/new')
+    .get(supervisors.renderNewForm)
+    .post(catchAsync(supervisors.createSupervisor));
+
+router.route('/:id')
+    .get(catchAsync(supervisors.showPage))
+    .patch(catchAsync(supervisors.editSupervisor))
+    .delete(catchAsync(supervisors.deleteSupervisor));
+
+router.get('/:id/edit', supervisors.renderEditForm);
 
 module.exports = router;
 

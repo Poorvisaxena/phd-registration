@@ -1,10 +1,26 @@
 <% layout('/layout/boilerplate') %>
     <div>Total supervisor : <%= supervisors.length %>
     </div>
-    <div>
+    <div class="mb-3">
         <a href="/admin/supervisors/new">Add new supervisor</a>
     </div>
     <% for (let supervisor of supervisors) { %>
-        <p>supervisor.name</p>
-        <p>supervisor.supervisorType</p>
+        <div class="border my-3">
+            <div class="row mx-2 my-3">
+                <div class="col-10">
+                    <p><strong>Name : </strong>
+                        <%=supervisor.name %>
+                    </p>
+                    <p><strong>Department : </strong>
+                        <%=supervisor.dept_name %>
+                    </p>
+                    <p><strong>University : </strong>
+                        <%=supervisor.universityName %>
+                    </p>
+                </div>
+                <div class="col-2 align-self-center">
+                    <a href="/admin/supervisors/<%=supervisor._id%>" class="card-link btn btn-primary my-2">View</a>
+                </div>
+            </div>
+        </div>
         <% } %>

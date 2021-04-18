@@ -6,6 +6,7 @@ const supervisorSchema = new Schema({
         required: true
     },
     emp_id: {
+        // on hold
         type: String
     },
     designation: {

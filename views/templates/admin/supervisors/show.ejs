@@ -1,0 +1,40 @@
+<% layout('/layout/boilerplate') %>
+    <div class="row justify-content-center my-3">
+        <div class="card col-md-8">
+            <div class="card-body">
+                <!-- <h5 class="card-title">Card title</h5> -->
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's -->
+                <!-- content.</p> -->
+                <p class="card-text"><strong>Name : </strong>
+                    <%= supervisor.name %>
+                </p>
+                <p class="card-text"><strong>Department : </strong>
+                    <%= supervisor.dept_name %>
+                </p>
+                <p class="card-text"><strong>University : </strong>
+                    <%= supervisor.universityName %>
+                </p>
+                <p class="card-text"><strong>Email : </strong>
+                    <%= supervisor.email %>
+                </p>
+                <p class="card-text"><strong>Contact No : </strong>
+                    <%= supervisor.contactNo %>
+                </p>
+                <p class="card-text"><strong>Internal/External : </strong>
+                    <%= supervisor.supervisorType %>
+                </p>
+                <p class="card-text"><strong>Research Area : </strong>
+                    <%= supervisor.researchArea %>
+                </p>
+                <p class="card-text"><strong>Address : </strong>
+                    <%= supervisor.address %>
+                </p>
+                <a href="/admin/supervisors/<%= supervisor._id %>/edit" class="card-link btn btn-primary">Edit</a>
+                <form action="/admin/supervisors/<%= supervisor._id %>?_method=DELETE" method="POST" class="d-inline">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+        <!-- <a href="/admin/supervisors">Go Back</a> -->
+    </div>

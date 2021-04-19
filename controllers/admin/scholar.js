@@ -5,8 +5,18 @@ module.exports.indexPage = async (req, res) => {
     res.render('templates/admin/scholars/index', { scholars });
 }
 
-module.exports.showPage = async (req, res) => {
+module.exports.showPage = async (req, res, next) => {
     const { id } = req.params;
-    const scholar = await Scholar.findById(id);
-    res.render('templates/admin/scholars/show', { scholar });
+    Scholar.findById(id)
+        .populate({
+            path: 'researchSupervisor',
+            model: 'Supervisor',
+            select: 'name'
+        }).exec(function (err, scholar) {
+            if (err) {
+                return next(err);
+            } else {
+                res.render('templates/admin/scholars/show', { scholar });
+            }
+        });
 }

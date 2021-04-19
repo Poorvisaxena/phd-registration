@@ -67,6 +67,8 @@ const applicantSchema = Schema({
         required: true
     },
     department: {
+        // type: Schema.Types.ObjectId,
+        // ref: 'Department',
         type: String,
         required: true
     },
@@ -100,7 +102,8 @@ const applicantSchema = Schema({
         type: Date
     },
     researchSupervisor: {
-        type: [String],
+        type: [Schema.Types.ObjectId],
+        ref: 'Supervisor',
         required: true
     },
     guardian: {

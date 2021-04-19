@@ -13,7 +13,7 @@ module.exports.register = async (req, res) => {
         const { username, password, confirmPassword } = req.body;
         if (password !== confirmPassword) {
             req.flash('error', 'Passwords do not match');
-            return res.redirect('/register');
+            return res.redirect('/admin/register');
         }
         const { role } = res.locals;
         const user = new User({ username, userType: role.Admin });
@@ -26,6 +26,6 @@ module.exports.register = async (req, res) => {
 
     } catch (e) {
         req.flash('error', e.message);
-        res.redirect('/register');
+        res.redirect('/admin/register');
     }
 }

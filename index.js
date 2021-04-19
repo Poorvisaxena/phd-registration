@@ -14,6 +14,8 @@ const User = require('./models/user');
 const homeRoutes = require('./routes/home');
 const adminRoutes = require('./routes/admin/admin');
 const scholarRoutes = require('./routes/scholar');
+const supervisorRoutes = require('./routes/supervisor');
+
 const ExpressError = require('./utils/ExpressError');
 
 mongoose.connect('mongodb://localhost:27017/phd-registration', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
@@ -71,6 +73,7 @@ app.use((req, res, next) => {
 
 // routes are added Headers.while writing please keep in mind the order
 app.use('/admin', adminRoutes);
+app.use('/supervisor', supervisorRoutes);
 app.use('/', homeRoutes);
 app.use('/', scholarRoutes);
 

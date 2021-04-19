@@ -1,4 +1,5 @@
 const Department = require('../models/department');
+const Supervisor = require('../models/supervisor');
 const Applicant = require('../models/applicant');
 const User = require('../models/user');
 
@@ -10,7 +11,8 @@ module.exports.renderApplicationForm = async (req, res) => {
     const currentUser = req.user;
     if (currentUser.applicationStatus === "notSubmitted") {
         const departments = await Department.find({});
-        res.render('templates/applicationForm', { departments });
+        const supervisors = await Supervisor.find({});
+        res.render('templates/applicationForm', { departments, supervisors });
     } else {
         res.render('templates/applicationForm/submitted');
     }

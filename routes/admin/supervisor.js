@@ -6,6 +6,9 @@ const Supervisor = require('../../models/supervisor')
 const supervisors = require('../../controllers/admin/supervisor');
 
 router.get('/', catchAsync(supervisors.indexPage));
+router.route('/register')
+    .get(supervisors.renderRegisterForm)
+    .post(catchAsync(supervisors.registerSupervisor));
 
 router.route('/new')
     .get(supervisors.renderNewForm)

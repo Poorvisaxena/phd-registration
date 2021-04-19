@@ -6,7 +6,7 @@ const catchAsync = require('../../utils/catchAsync');
 const applicantRoutes = require('./applicants');
 const scholarRoutes = require('./scholar');
 const departmentRoutes = require('./department');
-
+const supervisorRoutes = require('./supervisor');
 const admin = require('../../controllers/admin/admin');
 
 //this block here is used for authorization.
@@ -28,6 +28,7 @@ router.route('/register')
 router.use('/applicants', applicantRoutes);
 router.use('/scholars', scholarRoutes);
 router.use('/departments', departmentRoutes);
+router.use('/supervisors', supervisorRoutes);
 module.exports = router;
 
 //CODE THAT IS NOT REQUIRED RIGHT NOW.BUT WE MAY NEED IT LATER

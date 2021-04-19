@@ -19,13 +19,28 @@
             <div class="col-md-6 mb-3">
                 <label for="researchSupervisor1" class="form-label">Name of the Research Supervisor under whom the
                     applicant proposes to work <span class="required-field">*</span></label>
-                <input type="text" name="scholar[researchSupervisor]" id="researchSupervisor1" class="form-control"
-                    required>
+                <select name="scholar[researchSupervisor]" id="researchSupervisor1" class="form-select">
+                    <% for (let supervisor of supervisors) { %>
+                        <option value="<%= supervisor._id%>">
+                            <%= supervisor.name %>
+                        </option>
+                        <% } %>
+                </select>
+                <!-- <input type="text" name="scholar[researchSupervisor]" id="researchSupervisor1" class="form-control"
+                    required> -->
             </div>
             <div class="col-md-6 mb-3">
                 <label for="researchSupervisor2" class="form-label">Name of the Second Research Supervisor if applicant
                     wants to work under joint supervision of two supervisors</label>
-                <input type="text" name="scholar[researchSupervisor]" id="researchSupervisor2" class="form-control">
+                <select name="scholar[researchSupervisor]" id="researchSupervisor2" class="form-select">
+                    <option disabled selected value>-- select An Option -- </option>
+                    <% for (let supervisor of supervisors) { %>
+                        <option value="<%= supervisor._id%>">
+                            <%= supervisor.name %>
+                        </option>
+                        <% } %>
+                </select>
+                <!-- <input type="text" name="scholar[researchSupervisor]" id="researchSupervisor2" class="form-control"> -->
             </div>
         </div>
         <div class="row">

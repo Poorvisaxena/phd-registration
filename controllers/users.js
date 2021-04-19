@@ -39,7 +39,7 @@ module.exports.login = (req, res) => {
     } else if (currentUser.userType === role.Vc) {
         //do something
     } else if (currentUser.userType === role.Supervisor) {
-        //do something
+        res.redirect('/supervisor');
     } else if (currentUser.userType === role.Evaluator) {
         // do something
     } else if (currentUser.userType === role.Hod) {
